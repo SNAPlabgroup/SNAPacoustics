@@ -45,7 +45,8 @@ most other routines should work with similar adjustments.
 Attributions/Citations
 ----------------------
 
-If you are using this software, we request that you a statement acknowledging this resource.
+If you are using this software, we request that you include a statement acknowledging this resource in your output.
 A manuscript that makes use of these methods is under review; if and when the paper is accepted,
-we request that you cite it when you use this software.
+information about the paper will be included here.
+At that point, please cite it if you use this software.
 
