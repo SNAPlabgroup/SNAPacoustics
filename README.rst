@@ -35,12 +35,17 @@ Getting Started
 ---------------
 
 The best place to start is the configuration folder.
-That folder provides routines for getting basic information about your setup, which you can use adapt cardAPI, if necessary.
+That folder provides routines for getting basic information about your setup
+(like sound card delays, voltage range of the D/A device, etc.).
+Once you have that info, you may need to adapt some of the functions in cardAPI.
+If you are using the TDT RZ6 card, you'll likely not need to do any of this.
 
 Once you are able to successfully play and record sounds synchronously, please proceed to the FPLclick directory
 which provides routines for Thevenin calibration of the OAE probe,
-and immittance measurements of the ear (or any other load). Once you have adapted FPLclick.m to successfully run with your setup,
-most other routines should work with similar adjustments.
+and immittance measurements of the ear (or any other load). If probe and ear calibrations work successfully,
+most other routines should work.
+
+Individual folders have some more documentation.
 
 Attributions/Citations
 ----------------------
@@ -49,4 +54,9 @@ If you are using this software, we request that you include a statement acknowle
 A manuscript that makes use of these methods is under review; if and when the paper is accepted,
 information about the paper will be included here.
 At that point, please cite it if you use this software.
+
+NOTE
+++++
+Previously, the individual folders in this repository were separate repos in their own right.
+This repository merges and replaces them.
 
