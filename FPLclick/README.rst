@@ -45,7 +45,7 @@ the probe parameters.
 
 .. raw:: html
 
-    <img src="./sampleProbeCal.png" width="500px">
+    <img src="./SampleProbeCal.png" width="500px">
 .. raw:: html
 
     <img src="./sampleProbeCal_Impedance.png" width="500px">
