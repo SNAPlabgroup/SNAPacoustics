@@ -51,9 +51,11 @@ Attributions/Citations
 ----------------------
 
 If you are using this software, we request that you include a statement acknowledging this resource in your output.
-A manuscript that makes use of these methods is under review; if and when the paper is accepted,
-information about the paper will be included here.
-At that point, please cite it if you use this software.
+Please cite
+::
+Bharadwaj, H. M., Mai, A. R., Simpson, J. M., Choi, I., Heinz, M. G., & Shinn-Cunningham, B. G. (2019).
+Non-Invasive Assays of Cochlear Synaptopathy–Candidates and Considerations. Neuroscience, 407, 53-66.
+
 
 NOTE
 ++++
