@@ -38,7 +38,7 @@ Probe Calibration
 +++++++++++++++++
 
 Upon running ``calibProbe.m``, the experimenter will be prompted to enter some basic information (e.g., which driver in the probe to calibrate).
-The program is designed to play many repetitions of a short click stimulus sweeping from DC to the Nyquist rate with the ER-10X calibrator
+The program is designed to play many repetitions of a short click stimulus covering DC to the Nyquist rate with the ER-10X calibrator
 cavity set to five different lengths. Synchronous response is recorded, averaged across trials and analyzed.
 The average cavity response for each length is plotted along with the estimated impedance which then is iteratively refined and used to calculate
 the probe parameters.
