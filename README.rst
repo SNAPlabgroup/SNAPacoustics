@@ -51,10 +51,9 @@ Attributions/Citations
 ----------------------
 
 If you are using this software, we request that you include a statement acknowledging this resource in your output.
-Please cite
-::
-Bharadwaj, H. M., Mai, A. R., Simpson, J. M., Choi, I., Heinz, M. G., & Shinn-Cunningham, B. G. (2019).
-Non-Invasive Assays of Cochlear Synaptopathy–Candidates and Considerations. Neuroscience, 407, 53-66.
+Please cite::
+	Bharadwaj, H. M., Mai, A. R., Simpson, J. M., Choi, I., Heinz, M. G., & Shinn-Cunningham, B. G. (2019).
+	Non-Invasive Assays of Cochlear Synaptopathy–Candidates and Considerations. Neuroscience, 407, 53-66.
 
 
 NOTE
