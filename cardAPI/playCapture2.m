@@ -1,7 +1,7 @@
 function data = playCapture2(buffdata, card, Nreps, throwAway, attA,...
     attB, delayComp)
 % USAGE:
-%    data = playCapture(buffdata, card, Nreps, attA, attB, delayComp);
+%    data = playCapture2(buffdata, card, Nreps, attA, attB, delayComp);
 %
 % INPUTS:
 %    buffdata - Input data (channels(two) x samples)
