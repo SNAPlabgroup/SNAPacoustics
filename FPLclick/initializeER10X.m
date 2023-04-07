@@ -1,7 +1,7 @@
 % Initialize ER-10X if used for any measurement
-p10x = genpath('C:\Experiments\ER-10X\MATLABAPI\Matlab\');
+p10x = genpath('C:\Experiments\ER10X API\Matlab\');
 addpath(p10x);
-loaded = ER10XConnectLoadLib('C:\Experiments\ER-10X\MATLABAPI\');
+loaded = ER10XConnectLoadLib('C:\Experiments\ER10X API\');
 [err, ER10XHandle] = er10x_open();
 fprintf(1, 'Result of ER10_X_OPEN: %s\n', err);
 if strcmp(err, 'ER10X_ERR_OK')
