@@ -11,7 +11,8 @@ calib.SamplingRate = 48.828125; %kHz
 calib.Averages = 256;
 calib.ThrowAway = 4;
 calib.doInfResp = 0;
-calib.positions = [68.5, 56.5, 42, 35, 27.25];
+calib.positions = [68.5, 56.5, 38, 33, 27.25];
+% Positions for Purdue: [68.5, 56.5, 42, 35, 27.25];
 calib.doFilt = 0;
 calib.RZ6ADdelay = 98; % Samples
 calib.electricAcousticPolarity = -1; 
