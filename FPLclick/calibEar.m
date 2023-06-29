@@ -10,7 +10,7 @@ try
     
     % Initializing TDT
     % Specify path to cardAPI here
-    pcard = genpath('C:\Experiments\cardAPI\');
+    pcard = genpath('C:\Experiments\SNAPacoustics\cardAPI');
     addpath(pcard);
     card = initializeCard;
     
