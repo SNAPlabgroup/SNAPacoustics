@@ -27,7 +27,7 @@ while earflag == 1
 end
 
 % Make directory to save results
-paraDir = '.\';
+paraDir = '.\WBMEMRdata\';
 % whichScreen = 1;
 addpath(genpath(paraDir));
 if(~exist(strcat(paraDir,'\',subj),'dir'))
