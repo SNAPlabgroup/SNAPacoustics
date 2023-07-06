@@ -2,6 +2,8 @@
 *~
 *.zip
 *.tar.gz
+*.mat
+*.wav
 build
 doc/build
 doc/_build
