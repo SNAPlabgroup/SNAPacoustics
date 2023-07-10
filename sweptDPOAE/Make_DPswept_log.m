@@ -1,8 +1,8 @@
 function stim = Make_DPswept_log()
 
-stim.fmin = 500;
+stim.fmin = 1000; %500;
 stim.fmax = 16000;
-stim.speed = -1; % oct/sec
+stim.speed = -2; %-1; % oct/sec
 stim.drop_f1 = 53;  % levels
 stim.drop_f2 = stim.drop_f1 + 10 ; %f2 is 10 dB softer (more attn)
 stim.ratio = 1.22;
@@ -12,7 +12,7 @@ stim.Fs = 48828.125;
 
 stim.SNRcriterion = 6; 
 stim.maxTrials = 48; 
-stim.minTrials = 12; 
+stim.minTrials = 24; 
 stim.ThrowAway = 1;
 
 % Create stimulus

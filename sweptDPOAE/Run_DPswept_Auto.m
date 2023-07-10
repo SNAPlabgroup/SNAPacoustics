@@ -74,7 +74,7 @@ try
     drop_f2 = stim.drop_f2;
     delayComp = 1; % Always
     
-    windowdur = 0.5;
+    windowdur = 0.125;
     SNRcriterion = stim.SNRcriterion;
     maxTrials = stim.maxTrials;
     minTrials = stim.minTrials;
@@ -95,7 +95,7 @@ try
     % variable for live analysis
     k = 0;
     t = stim.t;
-    testfreq = [.75, 1, 1.5, 2, 3, 4, 6, 8, 12].* 1000;
+    testfreq = [1, 1.5, 2, 3, 4, 6, 8].* 1000;
     
     if stim.speed < 0
         f1 = stim.fmax;
@@ -129,7 +129,15 @@ try
         % test OAE
         
         OAEtrials = resp(1:k-stim.ThrowAway, :);
-        OAE = median(OAEtrials,1);
+        OAE = trimmean(OAEtrials, 80, 'round', 1);
+
+        if k > 4
+            NF = trimmean(OAEtrials(1:1:end, :), 80, 'round', 1) * 0.5 ...
+                - trimmean(OAEtrials(2:2:end, :), 80, 'round', 1) * 0.5;
+        else
+            NF = OAE;
+        end
+
         coeffs_temp = zeros(length(testfreq), 2);
         coeffs_noise = zeros(length(testfreq), 8);
         for m = 1:length(testfreq)
@@ -138,6 +146,7 @@ try
             taper = hanning(numel(win))';
             
             oae_win = OAE(win) .* taper;
+            nf_win = NF(win) .* taper;
             
             phiProbe_inst = (2.*stim.phi1_inst - stim.phi2_inst) * 2 * pi;
             
@@ -161,7 +170,7 @@ try
                 -sin(nearfreqs(4)*phiProbe_inst(win)) .* taper];
 
             coeffs_temp(m,:) = model_dp' \ oae_win';
-            coeffs_noise(m,:) = model_noise' \ oae_win';
+            coeffs_noise(m,:) = model_noise' \ nf_win';
         end
         
         % for noise
