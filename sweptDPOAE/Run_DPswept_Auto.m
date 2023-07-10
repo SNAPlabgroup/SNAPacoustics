@@ -63,7 +63,7 @@ try
     button = input('Do you want the subject to press a button to proceed? (Y or N):', 's');
     switch button
         case {'Y', 'y', 'yes', 'Yes', 'YES'}
-            getResponse(RZ);
+            getResponse(card.RZ);
             fprintf(1, '\nSubject pressed a button...\nStarting Stimulation...\n');
         otherwise
             fprintf(1, '\nStarting Stimulation...\n');
@@ -111,7 +111,6 @@ try
         t_freq = (testfreq-f1)/stim.speed + stim.buffdur;
     end
     
-    WaitSecs(15.); % For experimenter to go in and set themselves up
     while doneWithTrials == 0
         k = k + 1;
         
@@ -145,16 +144,22 @@ try
             model_dp = [cos(phiProbe_inst(win)) .* taper;
                 -sin(phiProbe_inst(win)) .* taper];
             
+            if stim.speed > 0
+                nearfreqs = [1.10, 1.12, 1.14, 1.16];
+            else
+                nearfreqs = [.90, .88, .86, .84];
+            end
+
             model_noise = ...
-                [cos(0.9*phiProbe_inst(win)) .* taper;
-                -sin(0.9*phiProbe_inst(win)) .* taper;
-                cos(0.88*phiProbe_inst(win)) .* taper;
-                -sin(0.88*phiProbe_inst(win)) .* taper;
-                cos(0.86*phiProbe_inst(win)) .* taper;
-                -sin(0.86*phiProbe_inst(win)) .* taper;
-                cos(0.84*phiProbe_inst(win)) .* taper;
-                -sin(0.84*phiProbe_inst(win)) .* taper];
-            
+                [cos(nearfreqs(1)*phiProbe_inst(win)) .* taper;
+                -sin(nearfreqs(1)*phiProbe_inst(win)) .* taper;
+                cos(nearfreqs(2)*phiProbe_inst(win)) .* taper;
+                -sin(nearfreqs(2)*phiProbe_inst(win)) .* taper;
+                cos(nearfreqs(3)*phiProbe_inst(win)) .* taper;
+                -sin(nearfreqs(3)*phiProbe_inst(win)) .* taper;
+                cos(nearfreqs(4)*phiProbe_inst(win)) .* taper;
+                -sin(nearfreqs(4)*phiProbe_inst(win)) .* taper];
+
             coeffs_temp(m,:) = model_dp' \ oae_win';
             coeffs_noise(m,:) = model_noise' \ oae_win';
         end
@@ -187,7 +192,7 @@ try
         % if SNR is good enough and we've hit the minimum number of
         % trials, then stop. Looking for ~75% of frequencies to have more
         % than criterion level SNRs.
-        if sum(SNR_temp > SNRcriterion) >= floor(0.75 * numel(testfreq))
+        if sum(SNR_temp > SNRcriterion) >= ceil(0.75 * numel(testfreq))
             if k - stim.ThrowAway >= minTrials
                 doneWithTrials = 1;
             end

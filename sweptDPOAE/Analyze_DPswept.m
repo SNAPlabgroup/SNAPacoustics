@@ -3,7 +3,7 @@
 % Abdala et al., 2015: Optimizing swept-tone protocols for recording
 % distortion-product otoacoustic emissions in adults and newborns
 
-windowdur = 0.5;
+windowdur = 0.25;
 offsetwin = 0; % not finding additional delay
 npoints = 512;
 
