@@ -47,6 +47,16 @@ pause(3);
 invoke(RZ, 'SetTagVal', 'onsetdel',0); % onset delay is in ms
 playrecTrigger = 1;
 
+%% The button section is just so you can start the program, go into the
+% booth and run yourself as the subject
+button = input('Do you want the subject to press a button to proceed? (Y or N):', 's');
+switch button
+    case {'Y', 'y', 'yes', 'Yes', 'YES'}
+        getResponse(RZ);
+        fprintf(1, '\nSubject pressed a button...\nStarting Stimulation...\n');
+    otherwise
+        fprintf(1, '\nStarting Stimulation...\n');
+end
 
 %% Set attenuation and play
 resplength = numel(stim.t);

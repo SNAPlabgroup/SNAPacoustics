@@ -211,7 +211,7 @@ t_dp = t(inds_valid);
 
 % Plot envelope of impulse response to see if there are two peaks, with the
 % notch between peaks being somewhere in the 1-5 ms range.
-figure(40);
+figure(4);
 impulse_dp_env = abs(hilbert(impulse_dp));
 plot(t_dp*1e3,  impulse_dp_env, 'linew', 2);
 xlim([t_min*1e3, 20]);
@@ -251,7 +251,7 @@ complex_dp_R_IFFT = interp1(f_complex_dp_D_only_allbins,...
     complex_dp_R_only_allbins_corrected, freq_dp);
 
 %% Plot ifft Method
-figure(4);
+figure(3);
 hold on;
 plot(freq_dp, db(abs(complex_dp)), 'linew', 2);
 hold on;
@@ -283,18 +283,18 @@ set(gca, 'FontSize', 16, 'XScale', 'log');
 legend('DP', 'F1', 'F2', 'NF');
 xticks([500, 1000, 2000, 4000, 8000, 16000])
 
+% figure(5);
+% semilogx(freq_dp, theta_dp, 'o')
+% set(gca, 'FontSize', 16);
+% title('Theta, angle(a,b)', 'FontSize', 16)
+% xlabel('Probe Frequency (Hz)', 'FontSize', 16);
+% ylabel('Phase (cycles)', 'FontSize', 16);
+% xticks([500, 1000, 2000, 4000, 8000, 16000]);
+% xlim([stim.fmin, stim.fmax]);
+
+
 figure(2);
-semilogx(freq_dp, theta_dp, 'o')
-set(gca, 'FontSize', 16);
-title('Theta, angle(a,b)', 'FontSize', 16)
-xlabel('Probe Frequency (Hz)', 'FontSize', 16);
-ylabel('Phase (cycles)', 'FontSize', 16);
-xticks([500, 1000, 2000, 4000, 8000, 16000]);
-xlim([stim.fmin, stim.fmax]);
-
-
-figure(3);
-semilogx(f_x_dp, tau_pg_dp, 's');
+semilogx(f_x_dp, tau_pg_dp, '-', 'LineWidth', 2);
 title('Group Delay (-d\theta/df)', 'FontSize', 16);
 xlabel('2F_1-F_2 Frequency (Hz)', 'FontSize', 16);
 ylabel('Group Delay (ms)', 'FontSize', 16);
@@ -303,12 +303,12 @@ ylim([-10, 30])
 xlim([stim.fmin*rdp, stim.fmax*rdp])
 xticks([500, 1000, 2000, 4000, 8000, 16000])
 
-figure(5);
-loglog(f_x_dp, tau_pg_dp/1000.*f_x_dp', 's');
-title('N - for calculating Qerb', 'FontSize', 16);
-xlabel('2F_1-F_2 Frequency (Hz)', 'FontSize', 16);
-ylabel('N_{DPOAE}', 'FontSize', 16);
-set(gca, 'FontSize', 16);
-xlim([stim.fmin*rdp, stim.fmax*rdp])
-xticks([500, 1000, 2000, 4000, 8000, 16000])
+% figure(6);
+% loglog(f_x_dp, tau_pg_dp/1000.*f_x_dp', 's');
+% title('N - for calculating Qerb', 'FontSize', 16);
+% xlabel('2F_1-F_2 Frequency (Hz)', 'FontSize', 16);
+% ylabel('N_{DPOAE}', 'FontSize', 16);
+% set(gca, 'FontSize', 16);
+% xlim([stim.fmin*rdp, stim.fmax*rdp])
+% xticks([500, 1000, 2000, 4000, 8000, 16000])
 

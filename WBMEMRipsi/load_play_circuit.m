@@ -1,6 +1,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [f1,RP,FS]=load_play_circuit(FS_tag,fig_num,GB_ch)
+function [f1,RP,FS]=load_play_circuit(FS_tag,fig_num,USB_ch)
 % Loads the TDT circuit and makes actx links necessay
 % Legacy code from KC. The TDT matlab syntax has now changed to look more
 % like OOPS but this old style is still supported.
@@ -10,14 +10,16 @@ function [f1,RP,FS]=load_play_circuit(FS_tag,fig_num,GB_ch)
 %------------
 warning('off'); 
 
-CIR_PATH='BasicPlay_ButtonIn_OAE2.rcx'; %The *.rco circuit used to play the files
+CIR_PATH='.\BasicPlay_ButtonIn_OAE2.rcx'; %The *.rco circuit used to play the files
 
 %Generate the actx control window in a specified figure:
 %-------------------------------------------------------
 f1=figure(fig_num);
 set(f1,'Position',[5 5 30 30],'Visible','off'); %places and hides the ActX Window
-RP=actxcontrol('RPco.x',[5 5 30 30],f1); %loads the actx control for using rco circuits
-invoke(RP,'ConnectRZ6','GB',GB_ch); 
+RP=actxserver('RPco.x', 'position',[5 5 30 30], ...
+    'parent', f1); %loads the actx control for using rco circuits
+% invoke(RP,'ConnectRZ6','GB',GB_ch); % Optibit
+invoke(RP,'ConnectRZ6','USB3',USB_ch);
 % The rco circuit can be run at the following set of discrete sampling
 % frequencies (in Hz): 0=6k, 1=12k, 2=25k, 3=50k, 4=100k, 5=200k.
 % Use the tags listed above to specify below:
