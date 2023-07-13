@@ -1,18 +1,18 @@
 function stim = Make_SFswept_log()
 
 stim.fmin = 500; %stim.cf/sqrt(2); % 1/2 octave below
-stim.speed = -1; % oct/sec downsweep
+stim.speed = -2; % oct/sec downsweep
 stim.diff = 50; % Hz (Fprobe - 50 = Fsupp; Probe is higher)
 stim.Fs = 48828.125;
 stim.fmax = 16000; %stim.cf*sqrt(2); % 1/2 octave above 
 
-stim.drop_Probe = 60; % for 40dB probe
-stim.drop_Supp = 40; % for 60dB suppressor
+stim.drop_Probe = 70; %60; % for 40dB probe
+stim.drop_Supp = 50; %40; % for 60dB suppressor
 stim.ThrowAway = 1;
-stim.Averages = 50;
+stim.Averages = 48;
 stim.SNRcriterion = 6; 
 stim.minTrials = 12; 
-stim.maxTrials = 50; 
+stim.maxTrials = 48; 
 buffdur = 0.1; %seconds; for either side of sweep 
 stim.buffdur = buffdur; 
 

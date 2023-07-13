@@ -19,10 +19,10 @@ end
 % Additional timulation parameters
 stim.clickatt = 30;
 stim.clickatt = stim.clickatt + 6; % WITH HB7 USING DIFFERENTIAL OUPUT
-stim.noiseatt = [48, 30, 12]; %Note makeEqExNoiseFFT returns RMS of -20 dB re: 1
+stim.noiseatt = [40, 34, 28, 22, 16, 10, 4]; %Note makeEqExNoiseFFT returns RMS of -20 dB re: 1
 stim.noiseatt = stim.noiseatt + 6; % WITH HB7 USING DIFFERENTIAL OUPUT
 stim.ThrowAway = 1;
-stim.Averages = 48;
+stim.Averages = 32;
 stim.pad = 256; % Number of samples extra to read in after stim ends
 stim.nLevels = numel(stim.noiseatt);
 

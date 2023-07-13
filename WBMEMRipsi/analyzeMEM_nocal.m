@@ -52,11 +52,7 @@ switch n
     case 11
         elicitor = alllevels;
     otherwise
-        if(min(stim.noiseatt) == 6)
-            elicitor = 94 - (stim.noiseatt - 6);
-        else
             elicitor = 94 - stim.noiseatt;
-        end
 end
 
 elicitor = elicitor(1:n);
@@ -75,7 +71,7 @@ if smoothmem
         MEMs(k, :) = sgolayfilt(MEM(k, :), 2, 35);
     end
 else
-    MEMs = MEM;
+    MEMs = MEM; %#ok<UNRCH> 
 end
 
 semilogx(freq / 1e3, MEMs, 'linew', 2);
@@ -85,7 +81,7 @@ set(gca, 'XTick', ticks, 'XTickLabel', num2str(ticks'), 'FontSize', 16);
 legend(num2str(elicitor'), 'location', 'best');
 
 if plotorig
-    hold on; 
+    hold on; %#ok<UNRCH> 
     semilogx(freq / 1e3, MEM, '--', 'linew', 2);
 end
 xlabel('Frequency (kHz)', 'FontSize', 16);
