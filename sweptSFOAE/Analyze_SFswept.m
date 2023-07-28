@@ -1,7 +1,7 @@
 
 % should put in something to make this a function and save the data!!!
 % change these vars if needed
-windowdur = 0.060; % 40ms in paper
+windowdur = 0.040; % 40ms in paper
 offsetwin = 0.020; % 20ms in paper
 npoints = 256; 
 hpfilter = 1; 

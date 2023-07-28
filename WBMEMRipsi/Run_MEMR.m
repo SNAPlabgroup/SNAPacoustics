@@ -36,7 +36,7 @@ end
 respDir = strcat(paraDir,'\',subj,'\');
 
 %% DO FULL BAND ONLY
-stim = makeMEMRstim_500to8500Hz_DEMO;
+stim = makeMEMRstim_500to8500Hz;
 stim.subj = subj;
 stim.ear = ear;
 
