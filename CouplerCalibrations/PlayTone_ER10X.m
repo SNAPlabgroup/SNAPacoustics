@@ -14,7 +14,7 @@ try
 
     % Make a tone
     dur = 2;
-    f0 = 20000;
+    f0 = 1000;
     volts_rms = 0.1;
     amplitude = volts_rms * sqrt(2) / card.mat2volts;
     t = 0:(1/fs):dur;
