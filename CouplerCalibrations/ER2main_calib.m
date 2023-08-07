@@ -66,13 +66,15 @@ dB_SPL_R = db(Pa_rms_R / P_ref) - db(V_rms_input);
 %% Plot results
 f_ticks = [0.25, 0.5, 1, 2, 4, 8, 16];
 figure;
-plot(f/1000, dB_SPL_L, 'b', 'LineWidth', 2);
+plot(f/1000, dB_SPL_L, 'bx-', 'LineWidth', 2);
 hold on;
-plot(f/1000, dB_SPL_R, 'r', 'LineWidth', 2);
+plot(f/1000, dB_SPL_R, 'ro-', 'LineWidth', 2);
 xlabel('Frequency (kHz)', 'FontSize', 16);
-ylabel('dB SPL/1V rms', 'FontSize', 16);
+ylabel('dB SPL in BK4157 / 1V rms', 'FontSize', 16);
 set(gca, 'XScale', 'log', 'FontSize', 16, ...
     'XTick', f_ticks, 'XTickLabel', num2str(f_ticks'));
 ylim([70, 120]);
 xlim([0.2, 16.5]);
+legend('Left', 'Right');
+title('ER2 FT5011 Shielded');
 
